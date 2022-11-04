@@ -4,11 +4,11 @@ function watchedAtValidation(req, res, next) {
   const checkDate = dateRegex.test(watchedAt);
 
   if (!watchedAt || watchedAt.length === 0) {
-    return res.status(400).json({ message: 'O campo \"watchedAt\" é obrigatório' });
+    return res.status(400).json({ message: 'O campo "watchedAt" é obrigatório' });
   }
   
   if (checkDate === false) {
-    return res.status(400).json({ message: 'O campo \"watchedAt\" deve ter o formato \"dd/mm/aaaa\"' });
+    return res.status(400).json({ message: 'O campo "watchedAt" deve ter o formato "dd/mm/aaaa"' });
   }
 
   return next();
